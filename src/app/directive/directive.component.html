@@ -1,0 +1,14 @@
+<button (click)="setShowHide()" class="btn btn-primary my-3">
+  {{buttonFlag == true ? 'Hide List of Courses' : 'Show List of Courses'}}
+</button>
+
+<div class="card">
+  <div class="card-header text-center">
+    List of Courses
+  </div>
+  <ul class="list-group" *ngIf="buttonFlag">
+    <li class="list-group-item" *ngFor="let course of listCourse">
+      {{course}}
+    </li>
+  </ul>
+</div>

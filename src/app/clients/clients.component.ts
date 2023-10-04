@@ -13,12 +13,10 @@ export class ClientsComponent implements OnInit {
 
   clients : Client[];
 
-  constructor(private clientService:ClientService){
-  }
+  constructor(private clientService:ClientService){}
   ngOnInit(): void {
-    this.clients = this.clientService.getClients();
+    this.clientService.getClients().subscribe(
+      clients => this.clients = clients
+    );
   }
-
-
-
 }
